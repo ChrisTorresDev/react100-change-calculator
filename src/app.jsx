@@ -8,14 +8,14 @@ class App extends Component {
       amountReceived: '',
       amountDue: '',
       changeDue: '',
-      twenties: 0,
-      tens: 0,
-      fives: 0,
-      dollars: 0,
-      quarters: 0,
-      dimes: 0,
-      nickels: 0,
-      pennies: 0,
+      twenties: '0',
+      tens: '0',
+      fives: '0',
+      dollars: '0',
+      quarters: '0',
+      dimes: '0',
+      nickels: '0',
+      pennies: '0',
     }
     this.handleChange = this.handleChange.bind(this);
     this.calculateChange = this.calculateChange.bind(this);
@@ -108,59 +108,68 @@ class App extends Component {
         <h1>Change Calculator</h1>
         <div className='row'>
 
-          <div className='col-4'>
-            <div className='panel'>
-              <div className='panel-body'>
+          <div className='form-group col-4'>
+            <div className='card'>
+              <div className="card-header">
                 <p className='tagline'>Enter Information</p>
+              </div>
+              <div className='card-body'>
                 <label>How much is due?</label>
                 <input className='form-control' name='amountDue' type='text' onChange={this.handleChange}></input>
                 <label>How much was amountReceived?</label>
                 <input className='form-control' name='amountReceived' type='text' onChange={this.handleChange}></input>
+              </div>
+              <div className="card-footer">
                 <button type='button' className='btn btn-primary' onClick={(e) => this.calculateChange(e)}>Calculate Button</button>
               </div>
             </div>
           </div>
-          <div className='col-8'>
-            <div className='outcome-alerts'>
-              <div className='alert alert-success' name='changeDue' role='alert'>The total change due is ${this.state.changeDue}</div>
-              <div className='alert alert-danger' role='alert'></div>
-              <div className='row'>
-                <div className='col-3 text-center' name='twenties'>
-                  <h5>Twenties</h5>
-                  <p>{this.state.twenties}</p>
-                </div>
-                <div className='col-3 text-center' name='tens'>
-                  <h5>Tens</h5>
-                  <p>{this.state.tens}</p>
-                </div>
-                <div className='col-3 text-center' name='fives'>
-                  <h5>Fives</h5>
-                  <p>{this.state.fives}</p>
-                </div>
-                <div className='col-3 text-center' name='dollars'>
-                  <h5>Ones</h5>
-                  <p>{this.state.dollars}</p>
-                </div>
-                <div className='col-3 text-center' name='quarters'>
-                  <h5>Quarters</h5>
-                  <p>{this.state.quarters}</p>
-                </div>
-                <div className='col-3 text-center' name='dimes'>
-                  <h5>Dimes</h5>
-                  <p>{this.state.dimes}</p>
-                </div>
-                <div className='col-3 text-center' name='nickels'>
-                  <h5>Nickels</h5>
-                  <p>{this.state.nickels}</p>
-                </div>
-                <div className='col-3 text-center' name='penniess'>
-                  <h5>Pennies</h5>
-                  <p>{this.state.pennies}</p>
+          <div className='form-group col-8'>
+            <div className="card">
+              <div className="card-body">
+                <div className='outcome-alerts'>
+                  <div className='alert alert-success' name='changeDue' role='alert'>The total change due is ${this.state.changeDue}</div>
+                  <div className='alert alert-danger' role='alert'></div>
+                  <div className='row'>
+                    <div className='card p-3 col-lg-3 text-center' name='twenties'>
+                      <h5>Twenties</h5>
+                      <p>{this.state.twenties}</p>
+                    </div>
+                    <div className='card p-3 col-lg-3 text-center' name='tens'>
+                      <h5>Tens</h5>
+                      <p>{this.state.tens}</p>
+                    </div>
+                    <div className='card p-3 col-lg-3 text-center' name='fives'>
+                      <h5>Fives</h5>
+                      <p>{this.state.fives}</p>
+                    </div>
+                    <div className='card p-3 col-lg-3 text-center' name='dollars'>
+                      <h5>Ones</h5>
+                      <p>{this.state.dollars}</p>
+                    </div>
+                    <div className='card p-3 col-lg-3 text-center' name='quarters'>
+                      <h5>Quarters</h5>
+                      <p>{this.state.quarters}</p>
+                    </div>
+                    <div className='card p-3 col-lg-3 text-center' name='dimes'>
+                      <h5>Dimes</h5>
+                      <p>{this.state.dimes}</p>
+                    </div>
+                    <div className='card p-3 col-lg-3 text-center' name='nickels'>
+                      <h5>Nickels</h5>
+                      <p>{this.state.nickels}</p>
+                    </div>
+                    <div className='card p-3 col-lg-3 text-center' name='penniess'>
+                      <h5>Pennies</h5>
+                      <p>{this.state.pennies}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              
+
             </div>
           </div>
-
         </div>
       </div>
     )
